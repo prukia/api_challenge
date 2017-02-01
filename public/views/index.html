@@ -9,7 +9,7 @@
   <body ng-app = "gifApp">
     <main ng-controller = "GifController as gif">
       <form>
-        <input type ="text" name = "search"  />
+        <input type ="text" ng-model = "gif.search"  />
         <button type="sumbit" ng-click = "gif.searchGif(gif.gifDisplay)">SEARCH!</button>
       </form>
 

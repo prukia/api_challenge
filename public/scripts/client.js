@@ -23,6 +23,13 @@ app.controller('GifController', function($http){
 
     ctrl.searchGif = function(gif){
       console.log("search found", gif);
-      $http.get(API + '/gif/search' + + '&api_key=dc6zaTOxFJmzC')
+      console.log(ctrl.search);
+      $http.get(API + '/gif/search', {
+        params: {
+          api_key: 'dc6zaTOxFJmzC',
+          q: ctrl.search
+        }
+      })
     }
+
   });
