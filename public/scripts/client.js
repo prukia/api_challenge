@@ -9,6 +9,7 @@ app.controller('GifController', function($http){
 
   ctrl.gifDisplay = '';
   ctrl.randGif = '';
+  ctrl.gifs=[];
 
     ctrl.randomGif = function(gif){
       console.log("random gif", gif);
@@ -24,12 +25,22 @@ app.controller('GifController', function($http){
     ctrl.searchGif = function(gif){
       console.log("search found", gif);
       console.log(ctrl.search);
-      $http.get(API + '/gif/search', {
-        params: {
-          api_key: 'dc6zaTOxFJmzC',
-          q: ctrl.search
-        }
-      })
-    }
+      $http.get(API + '/gifs/search?q='+ ctrl.search + '&api_key=dc6zaTOxFJmzC').then(function(response){
+          console.log("got a response from the API", response);
+          // ctrl.gifDisplay = response.data.data[0].images.original.url;
+          ctrl.gifs = response.data.data;
+          console.log(ctrl.gifs);
+        }).catch(function(err){
+          console.log("error getting info from API", err);
+        });
+      }
+
+    //   $http.get(API + '/gif/search', {
+    //     params: {
+    //       api_key: 'dc6zaTOxFJmzC',
+    //       q: ctrl.search
+    //     }
+    //   })
+    // }
 
   });
