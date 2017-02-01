@@ -8,12 +8,18 @@
   </head>
   <body ng-app = "gifApp">
     <main ng-controller = "GifController as gif">
-      <!-- <p ng-repeat = "individualGif in gif.gifDisplay"> -->
+      <form>
+        <input type ="text" name = "search"  />
+        <button type="sumbit" ng-click = "gif.searchGif(gif.gifDisplay)">SEARCH!</button>
+      </form>
+
+
 
         <button ng-click = "gif.randomGif(gif.randGif)">Random</button>
-        {{individualGif.id}}
+
         <img ng-src="{{gif.randGif}}"  />
-      <!-- </p> -->
+
     </main>
   </body>
 </html>
+<!-- ng-repeat = "individualGif in gif.gifDisplay" -->

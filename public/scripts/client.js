@@ -7,7 +7,7 @@ app.controller('GifController', function($http){
 
   var ctrl = this;
 
-  ctrl.gifDisplay = [];
+  ctrl.gifDisplay = '';
   ctrl.randGif = '';
 
     ctrl.randomGif = function(gif){
@@ -20,4 +20,9 @@ app.controller('GifController', function($http){
           console.log("error getting info from API", err);
         });
       }
+
+    ctrl.searchGif = function(gif){
+      console.log("search found", gif);
+      $http.get(API + '/gif/search' + + '&api_key=dc6zaTOxFJmzC')
+    }
   });
