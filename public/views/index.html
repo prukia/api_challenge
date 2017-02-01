@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/scripts/client.js"></script>
+    <title>Random gifs</title>
+  </head>
+  <body ng-app = "gifApp">
+    <main ng-controller = "GifController as gif">
+      <!-- <p ng-repeat = "individualGif in gif.gifDisplay"> -->
+
+        <button ng-click = "gif.randomGif(gif.randGif)">Random</button>
+        {{individualGif.id}}
+        <img ng-src="{{gif.randGif}}"  />
+      <!-- </p> -->
+    </main>
+  </body>
+</html>
