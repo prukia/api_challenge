@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="/scripts/client.js"></script>
+    <script src="/scripts/gif-service.js" charset="utf-8"></script>
     <title>Random gifs</title>
   </head>
   <body ng-app = "gifApp">
+    <h1>GIF App</h1>
     <main ng-controller = "GifController as gif">
       <form>
         <input type ="text" ng-model = "gif.search"  />
         <!-- search function does not need parameters -->
-        <button type="sumbit" ng-click = "gif.searchGif()">SEARCH!</button>
+        <button type="sumbit" ng-click = "gif.searchGif(gif.search)">SEARCH!</button>
 
       </form>
       <div ng-repeat="pic in gif.gifs">
