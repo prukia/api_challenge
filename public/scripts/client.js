@@ -11,10 +11,11 @@ app.controller('GifController', function(GifService){
   ctrl.randGif = '';
   ctrl.gifs=[];
 
-    ctrl.randomGif = function(gif){
-      console.log("random gif", gif);
+//don't need to pass a parm in this function because it is looking for randomGif
+    ctrl.randomGif = function(){
+      // console.log("random gif", gif);
       //gifUrl is accessing the response  from the service
-    GifService.getRandomGif(gif).then(function (gifUrl){
+    GifService.getRandomGif().then(function (gifUrl){
       ctrl.randGif = gifUrl;
       console.log(ctrl.randGif);
     });

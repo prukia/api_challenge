@@ -8,7 +8,7 @@
     <title>Random gifs</title>
   </head>
   <body ng-app = "gifApp">
-    <h1>GIF App</h1>
+    <h1>GIF API</h1>
     <main ng-controller = "GifController as gif">
       <form>
         <input type ="text" ng-model = "gif.search"  />
@@ -22,8 +22,8 @@
       </div>
 
 
-
-        <button ng-click = "gif.randomGif(gif.randGif)">Random</button>
+      <!-- don't need to pass param in this -->
+        <button ng-click = "gif.randomGif()">Random</button>
 
         <img ng-src="{{gif.randGif}}"  />
 
