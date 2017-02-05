@@ -1,0 +1,28 @@
+TODO
+
+1. Create a database
+--store comments and gif img URL
+--updates of favorites
+--4 columns ID, comment,img URL, idk the last one?
+
+
+
+
+2. Server side:
+requests for
+--getting favs
+--creating favs
+
+
+
+
+3.Client side:
+--create routes for home and favorites
+--add location provider
+
+4.index.html
+--create pages...file favorites
+--link routes via <a href="/">Home</a>
+<a href=/favorites>Favorites</a>
+--create text box input for comment
+-create button for favorites.

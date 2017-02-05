@@ -1,0 +1,14 @@
+h1, h2{
+  color: purple;
+  text-align: center;
+  text-decoration: underline;
+  font-family: 'Audiowide', cursive;
+  font-size: 64px;
+}
+
+body{
+  background-color: black;
+}
+#search{
+  display: inline-block;
+}

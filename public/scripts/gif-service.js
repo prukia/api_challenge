@@ -14,7 +14,11 @@ return $http.get(API + '/gifs/random?api_key=dc6zaTOxFJmzC').then(function(respo
   };
 
 this.searchGif = function (search){
-return $http.get(API + '/gifs/search?q='+ search + '&api_key=dc6zaTOxFJmzC').then(function(response){
+return $http.get(API + '/gifs/search', {params: {
+  q: search,
+  api_key: 'dc6zaTOxFJmzC',
+  limit: 5
+}}).then(function(response){
       console.log("got a response from the API", response);
       //ctrl.gifs does not exist anymore instead return
       return response.data.data;
