@@ -11,6 +11,8 @@ ctrl.getGif = function(){
 console.log("search found in DB");
 GifService.getGif().then(function (gifArray){
   ctrl.gifs = gifArray;
+  //getting fav count
+  ctrl.count = gifArray.length;
 });
 };
 //post works on client side only for random search
@@ -19,6 +21,7 @@ ctrl.postGif = function (fav){
     console.log("Your fav gif is posted");
   });
 };
+//call function to run above function on page load
 ctrl.getGif();
 
 });
