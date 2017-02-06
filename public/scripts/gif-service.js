@@ -30,19 +30,21 @@ return $http.get(API + '/gifs/search', {params: {
 
 this.getGif = function (){
 return  $http({
-    method: 'GET',
+    type: 'GET',
     url:'/gif'
   }).then(function (response){
     console.log("got a response from the DB", response);
     return response.data;
   }).catch(function(err){
     console.log("error getting info from DB", err);
-  })
+  });
 };
 
 this.postGif = function (comment, url){
+console.log(comment);
+console.log(url);
   return $http({
-    method: 'POST',
+    type: 'POST',
     url:'/gif',
     data: {
       comments: comment,
@@ -50,6 +52,8 @@ this.postGif = function (comment, url){
     }
   }).then(function (response){
     console.log('post is successful', response);
+    // console.log(data);
+    // return response.data.data.image_url;
   }).catch(function (err){
     console.log("error getting info from DB", err);
   })

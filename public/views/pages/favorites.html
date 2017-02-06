@@ -1,7 +1,9 @@
 <div id="favorites">
-  <h2>Your favorite Gifs</h2>
-<!-- <div ng-repeat="">
-    <img src="" alt=""> -->
+  <h2>Your favorite Gifs:</h2>
+<div ng-repeat="pic in fav.gifs">
+    <img ng-src="{{pic.image_url}}" alt="">
+
+<p> Comment: {{pic.comments}} </p>
 </div>
 
 </div>

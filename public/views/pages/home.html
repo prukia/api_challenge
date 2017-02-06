@@ -1,26 +1,27 @@
 <form class="form-inline">
-  <input type ="text" ng-model = "gif.search"  placeholder="search" class="form-control" />
+  <input type ="text" ng-model = "gif.search"  placeholder="search gifs" class="form-control" />
   <!-- search function does not need parameters -->
-  <button type="sumbit" class="btn btn-outline-primary" ng-click = "gif.searchGif(gif.search);myVar=1">SEARCH!</button>
+  <button type="sumbit" class="btn btn-outline-primary" ng-click = "gif.searchGif(gif.search);myVarSearch=1"><i class="em em-mag"></i> SEARCH</button>
   <!-- don't need to pass param in this -->
-    <button class="btn btn-outline-danger" ng-click = "gif.randomGif();myVar=1"><i class="em em-alien"></i>RANDOM</button>
+    <button class="btn btn-outline-danger" ng-click = "gif.randomGif();myVarRand=1"><i class="em em-alien"></i>RANDOM</button>
 
 </form>
 
+<form class="form-inline">
 <div id="search" class="container form-section" ng-repeat="pic in gif.gifs">
   <!-- passed gif route to pic object -->
     <img ng-src="{{pic.images.fixed_width.url}}"  />
-<form class="form-inline">
-    <input  ng-init="myVar=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2">
-    <button  class="btn btn-outline-success" type="button" name="favoriteGif"><i class="em em-blue_heart"></i> Favorite Gif!</button>
+
+    <input ng-model="gif.comment" ng-init="myVarSearch=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2">
+    <button ng-click="gif.postGif(pic.images.fixed_width.url)" class="btn btn-outline-success" type="button" name="favoriteGif"><i class="em em-blue_heart"></i> Gif!</button>
 </div>
 </form>
 
 
 
-<form class="form-inline">
+<form class="form-inline" ng-show ="myVarRand" >
   <img ng-src="{{gif.randGif}}"  />
-  <input ng-model="gif.comment" ng-show ="myVar" ng-init="myVar=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2 ">
-  <button ng-click="gif.postGif()" class="btn btn-outline-success" ng-show="myVar" type="button" name="favoriteGif">
-  <i class="em em-blue_heart"></i> Favorite Gif!</button>
+  <input ng-model="gif.comment" ng-show ="myVarRand" ng-init="myVaRand=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2 ">
+  <button ng-click="gif.postGif()" class="btn btn-outline-success" ng-show="myVarRand" type="button" name="favoriteGif">
+  <i class="em em-blue_heart"></i> Gif!</button>
   </form>

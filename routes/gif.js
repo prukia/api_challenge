@@ -40,7 +40,7 @@ router.post('/', function(req, res){
     } else {
 
       client.query('INSERT INTO favorites (comments, image_url) VALUES ($1, $2) RETURNING *;',
-      [req.body.comments, req.body.image_url],
+      [req.body.comment, req.body.url],
       function(err, result){
         //waiting for database to get information back
         done();
@@ -48,7 +48,7 @@ router.post('/', function(req, res){
           console.log('Error querying DB', err);
           res.sendStatus(500);
         }else{
-          console.log('Got info from DB', result.rows);
+          console.log('Got info from DB POST', result.rows);
           res.send(result.rows);
         }
 

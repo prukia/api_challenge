@@ -5,7 +5,7 @@ app.config(function ($routeProvider, $locationProvider){
   controller: 'GifController as gif'
 }).when('/favorites',{
     templateUrl: 'views/pages/favorites.html',
-    controller: 'FavoritesController as favCtrl'
+    controller: 'FavoritesController as fav'
   });
   //injected another angular provider sets location to true
   $locationProvider.html5Mode(true);
