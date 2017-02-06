@@ -12,7 +12,7 @@
     <img ng-src="{{pic.images.fixed_width.url}}"  />
 <form class="form-inline">
     <input  ng-init="myVar=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2">
-    <button class="btn btn-outline-success" type="button" name="favoriteGif"><i class="em em-blue_heart"></i> Favorite Gif!</button>
+    <button  class="btn btn-outline-success" type="button" name="favoriteGif"><i class="em em-blue_heart"></i> Favorite Gif!</button>
 </div>
 </form>
 
@@ -20,7 +20,7 @@
 
 <form class="form-inline">
   <img ng-src="{{gif.randGif}}"  />
-  <input ng-show ="myVar" ng-init="myVar=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2 ">
-  <button class="btn btn-outline-success" ng-show="myVar" type="button" name="favoriteGif">
+  <input ng-model="gif.comment" ng-show ="myVar" ng-init="myVar=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2 ">
+  <button ng-click="gif.postGif()" class="btn btn-outline-success" ng-show="myVar" type="button" name="favoriteGif">
   <i class="em em-blue_heart"></i> Favorite Gif!</button>
   </form>

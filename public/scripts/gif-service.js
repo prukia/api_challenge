@@ -26,7 +26,36 @@ return $http.get(API + '/gifs/search', {params: {
     }).catch(function(err){
       console.log("error getting info from API", err);
     })
-  }
+  };
+
+this.getGif = function (){
+return  $http({
+    method: 'GET',
+    url:'/gif'
+  }).then(function (response){
+    console.log("got a response from the DB", response);
+    return response.data;
+  }).catch(function(err){
+    console.log("error getting info from DB", err);
+  })
+};
+
+this.postGif = function (comment, url){
+  return $http({
+    method: 'POST',
+    url:'/gif',
+    data: {
+      comments: comment,
+      image_url: url
+    }
+  }).then(function (response){
+    console.log('post is successful', response);
+  }).catch(function (err){
+    console.log("error getting info from DB", err);
+  })
+
+};
+
 
 
 });

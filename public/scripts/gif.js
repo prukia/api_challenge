@@ -5,6 +5,9 @@ app.controller('GifController', function(GifService){
   ctrl.gifDisplay = '';
   ctrl.randGif = '';
   ctrl.gifs=[];
+  ctrl.comment = '';
+  ctrl.url= '';
+
 
 //don't need to pass a parm in this function because it is looking for randomGif
     ctrl.randomGif = function(){
@@ -23,4 +26,19 @@ app.controller('GifController', function(GifService){
       });
 
   };
+
+  ctrl.getGif = function(){
+  console.log("search found in DB");
+  GifService.getGif().then (function (gifArray){
+    ctrl.gifs = gifArray;
+  });
+  ctrl.postGif = function (){
+    GifService.postGif(ctrl.comment, ctrl.url).then(function(){
+      console.log("Your fav gif is posted");
+    });
+  };
+
+};
+
+
 });
