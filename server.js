@@ -6,6 +6,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
+//bodyParser needs to be before /gif so server can read req.body
 app.use(bodyParser.json());
 app.use('/', index);
 app.use('/gif', gif);
