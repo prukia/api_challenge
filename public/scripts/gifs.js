@@ -35,8 +35,8 @@ app.controller('GifController', function(GifService){
   });
   };
 //post works on client side only for search btn
-  ctrl.postGif = function (fav){
-    GifService.postGif(ctrl.comment, fav).then(function(){
+  ctrl.postGif = function (comment, url){
+    GifService.postGif(comment, url).then(function(){
       console.log("Your fav gif is posted");
     });
   };

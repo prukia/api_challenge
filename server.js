@@ -6,10 +6,11 @@ var app = express();
 var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 app.use('/', index);
 app.use('/gif', gif);
+//needs to be at the end of all the other routes.
 app.use('/*', index);
-app.use(bodyParser.json());
 
 var port = process.env.PORT || 3000;
 var server = app.listen(port, function() {

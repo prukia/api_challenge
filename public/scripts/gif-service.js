@@ -30,7 +30,7 @@ return $http.get(API + '/gifs/search', {params: {
 
 this.getGif = function (){
 return  $http({
-    type: 'GET',
+    method: 'GET',
     url:'/gif'
   }).then(function (response){
     console.log("got a response from the DB", response);
@@ -44,7 +44,7 @@ this.postGif = function (comment, url){
 console.log(comment);
 console.log(url);
   return $http({
-    type: 'POST',
+    method: 'POST',
     url:'/gif',
     data: {
       comments: comment,

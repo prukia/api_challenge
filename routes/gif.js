@@ -40,7 +40,7 @@ router.post('/', function(req, res){
     } else {
 
       client.query('INSERT INTO favorites (comments, image_url) VALUES ($1, $2) RETURNING *;',
-      [req.body.comment, req.body.url],
+      [req.body.comments, req.body.image_url],
       function(err, result){
         //waiting for database to get information back
         done();

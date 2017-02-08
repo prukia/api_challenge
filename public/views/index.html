@@ -18,9 +18,9 @@
   <body ng-app = "gifApp">
     <h1>GIPHY GRAM</h1>
     <main>
-      <nav>
+      <nav ng-controller="FavoritesController as fav">
         <a href="/">Home</a>
-        <a href="/favorites">Favorites{{fav.count}}</a>
+        <a href="/favorites">Favorites({{fav.count}})</a>
       </nav>
       <br />
 

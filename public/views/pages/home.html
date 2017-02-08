@@ -12,8 +12,8 @@
   <!-- passed gif route to pic object -->
     <img ng-src="{{pic.images.fixed_width.url}}"  />
 
-    <input ng-model="gif.comment" ng-init="myVarSearch=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2">
-    <button ng-click="gif.postGif(pic.images.fixed_width.url)" class="btn btn-outline-success" type="button" name="favoriteGif"><i class="em em-blue_heart"></i> Gif!</button>
+    <input ng-model="pic.comment" ng-init="myVarSearch=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2">
+    <button ng-click="gif.postGif(pic.comment, pic.images.fixed_width.url)" class="btn btn-outline-success" type="button" name="favoriteGif"><i class="em em-blue_heart"></i> Gif!</button>
 </div>
 </form>
 
@@ -22,6 +22,6 @@
 <form class="form-inline" ng-show ="myVarRand" >
   <img ng-src="{{gif.randGif}}"  />
   <input ng-model="gif.comment" ng-show ="myVarRand" ng-init="myVaRand=0" type="text" name="comment" placeholder="comment here" class="form-control col-xs-2 ">
-  <button ng-click="gif.postGif()" class="btn btn-outline-success" ng-show="myVarRand" type="button" name="favoriteGif">
+  <button ng-click="gif.postGif(gif.randGif)" class="btn btn-outline-success" ng-show="myVarRand" type="button" name="favoriteGif">
   <i class="em em-blue_heart"></i> Gif!</button>
   </form>
